@@ -11,7 +11,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/ThirdPersonMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20vgWSpR30oH5CEfqtuEfVhx4nl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -39,7 +39,7 @@
       <workItem from="1637101020608" duration="869000" />
       <workItem from="1637102698020" duration="3279000" />
       <workItem from="1637518171911" duration="813000" />
-      <workItem from="1637520865001" duration="1196000" />
+      <workItem from="1637520865001" duration="2586000" />
     </task>
     <servers />
   </component>
