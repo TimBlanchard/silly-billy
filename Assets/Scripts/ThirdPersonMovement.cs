@@ -21,12 +21,17 @@ public class ThirdPersonMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        
+        // Check isMoving to set animations
+        bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
+        bool isMoving = hasHorizontalInput || hasVerticalInput;
+   
+        animator.SetBool("isMoving", isMoving);
 
         if (direction.magnitude >= 0.1f)
         {
-            Debug.Log("trigger");
-            animator.SetBool("isMoving", true);
-            
+
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             //smooth direction rotation
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
@@ -35,10 +40,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
         }
     }
 }
